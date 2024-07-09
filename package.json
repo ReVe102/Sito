@@ -4,9 +4,9 @@
     "private": true,
     "scripts": {
       "postinstall": "npm install --prefix backend && npm install --prefix vite-project",
-      "start": "npm run start --prefix vite-project && npm start --prefix backend",
+      "start": "concurrently \"npm start --prefix backend\" \"npm run dev --prefix vite-project\"",
       "build": "npm run build --prefix vite-project"
-      },
+    },
       "keywords": [],
       "author": "",
       "license": "ISC",
