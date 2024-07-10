@@ -22,6 +22,26 @@ const Profilo = () => {
   const [paragrafo, setParagrafo] = useState('panoramica');
   const [notifications, setNotifications] = useState([]);
 
+  const handleDelete = async (postId, postType) => {
+    try {
+      const token = window.localStorage.getItem('token');
+      if (!token) {
+        throw new Error('Token non trovato');
+      }
+      const response = await axios.delete(`http://localhost:3000/posts/${postType}/${postId}`, {
+        headers: {
+          Authorization: token
+        }
+      });
+      if (response.status === 200) {
+        alert('Post eliminato con successo');
+        setUserPosts(userPosts.filter(post => post._id !== postId)); 
+      }
+    } catch (error) {
+      console.error('Errore durante eliminazione del post', error);
+    }
+  };
+
   useEffect(() => {
     const fetchUserData = async () => {
       try {
@@ -257,12 +277,12 @@ const Profilo = () => {
       <div className="mainbar">
         <Share />
       </div>
-      <div>
-        {userPosts.map((post) => (
-          <PostLogin key={post._id} post={post} />
-        ))}
+      {userPosts.map((post) => (
+      <div key={post._id}>
+      <PostLogin post={post} handleDelete={handleDelete} postType={userData.status === 'azienda' ? 'azienda' : 'privato'}/>
       </div>
-    </div>
+      ))}
+      </div>
   );
 };
 
