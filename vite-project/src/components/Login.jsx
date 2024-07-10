@@ -18,7 +18,7 @@ export default function Login() {
     e.preventDefault();
     console.log(email, password);
 
-    fetch("http://localhost:3000/login", {
+    fetch("https://sito-be.onrender.com/login", {
       method: "POST",
       crossDomain: true,
       headers: {
@@ -40,7 +40,7 @@ export default function Login() {
           window.localStorage.setItem("loggedIn", true);
 
           // Recupera i dati dell'utente e salvali nel localStorage
-          fetch("http://localhost:3000/userData", {
+          fetch("https://sito-be.onrender.com/userData", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
