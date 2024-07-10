@@ -18,7 +18,7 @@ app.use(express.json({ limit: '20mb' }));
 app.use(express.urlencoded({ limit: '20mb', extended: true }));
 
 // Utilizza la variabile di ambiente PORT o default a 3000
-const url = process.env.URL || 'http://localhost:3000'
+const port = process.env.PORT || 3000
 
 const server = http.createServer(app);
 const io = new Server(server, {
@@ -72,7 +72,7 @@ const connessioneDb = async () => {
     }
 };
 
-server.listen(url, () => {
-    console.log(`Server in esecuzione sulla porta ${url}`);
+server.listen(port, () => {
+    console.log(`Server in esecuzione sulla porta ${port}`);
     connessioneDb();
 });
