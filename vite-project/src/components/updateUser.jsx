@@ -68,7 +68,7 @@ function UpdateUser(){
     
 
     useEffect(() => {
-        fetch("http://localhost:3000/userData", {
+        fetch("https://sito-be.onrender.com/userData", {
             method: "POST",
             crossDomain: true,
             headers: {
@@ -94,7 +94,7 @@ function UpdateUser(){
     const updateData=()=>{
         console.log(userData.email)
     
-            fetch("http://localhost:3000/updateUser", {
+            fetch("https://sito-be.onrender.com/updateUser", {
                 method: "POST",
                 crossDomain: true,
                 headers: {

@@ -63,7 +63,7 @@ const Register = () => {
         e.preventDefault();
         
         if(userType=="privato"){
-            fetch("http://localhost:3000/register", {
+            fetch("https://sito-be.onrender.com/register", {
                 method: "POST",
                 crossDomain: true,
                 headers: {
@@ -81,7 +81,7 @@ const Register = () => {
                     navigate("/login");
                 });
         }else{
-            fetch("http://localhost:3000/registerAzienda", {
+            fetch("https://sito-be.onrender.com/registerAzienda", {
                 method: "POST",
                 crossDomain: true,
                 headers: {

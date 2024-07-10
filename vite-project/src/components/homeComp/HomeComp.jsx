@@ -11,7 +11,7 @@ export default function HomeComp(){
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const res = await axios.get("http://localhost:3000/posts/aziende");
+                const res = await axios.get("https://sito-be.onrender.com/posts/aziende");
                 setPosts(res.data);
             } catch (err) {
                 console.error("Errore nel recuperare i post delle aziende", err);

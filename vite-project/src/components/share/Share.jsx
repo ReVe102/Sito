@@ -17,7 +17,7 @@ export default function Share() {
     useEffect(() => {
         const fetchUserData = async () => {
             try {
-                const response = await axios.post("http://localhost:3000/userData", {
+                const response = await axios.post("https://sito-be.onrender.com/userData", {
                     token: window.localStorage.getItem("token")
                 });
                 const data = response.data;

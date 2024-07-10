@@ -7,7 +7,7 @@ import './Profilo.css';
 import QRCode from 'qrcode.react';
 
 
-const socket = io('http://localhost:3000');
+const socket = io('https://sito-be.onrender.com');
 
 const ProfiloUtente = () => {
     const { privatoId, aziendaId } = useParams();
@@ -23,11 +23,11 @@ const ProfiloUtente = () => {
                 let postsResponse;
 
                 if (privatoId) {
-                    userResponse = await axios.get(`http://localhost:3000/privati/${privatoId}`);
-                    postsResponse = await axios.get(`http://localhost:3000/posts/privato/${privatoId}`);
+                    userResponse = await axios.get(`https://sito-be.onrender.com/privati/${privatoId}`);
+                    postsResponse = await axios.get(`https://sito-be.onrender.com/posts/privato/${privatoId}`);
                 } else if (aziendaId) {
-                    userResponse = await axios.get(`http://localhost:3000/aziende/${aziendaId}`);
-                    postsResponse = await axios.get(`http://localhost:3000/posts/azienda/${aziendaId}`);
+                    userResponse = await axios.get(`https://sito-be.onrender.com/aziende/${aziendaId}`);
+                    postsResponse = await axios.get(`https://sito-be.onrender.com/posts/azienda/${aziendaId}`);
                 }
 
                 if (userResponse) {

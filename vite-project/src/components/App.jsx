@@ -12,7 +12,7 @@ import HomeEmp from './homeEmp/HomeEmp';
 import NotificationsPage from './NotificationsPage';
 
 
-const socket = io('http://localhost:3000');
+const socket = io('https://sito-be.onrender.com');
 
 const App = () => {
   useEffect(() => {

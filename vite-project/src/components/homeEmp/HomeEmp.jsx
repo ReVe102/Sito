@@ -11,7 +11,7 @@ export default function HomeEmp(){
     useEffect(() => {
         const fetchPosts = async () => {
             try {
-                const res = await axios.get("http://localhost:3000/posts/privati");
+                const res = await axios.get("https://sito-be.onrender.com/posts/privati");
                 setPosts(res.data);
             } catch (err) {
                 console.error("Errore nel recuperare i post dei privati", err);

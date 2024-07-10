@@ -14,7 +14,7 @@ export default function PostLogin({ post, handleDelete }) {
         const fetchCurrentUser = async () => {
             try {
                 const token = window.localStorage.getItem("token");
-                const res = await axios.post("http://localhost:3000/userData", { token });
+                const res = await axios.post("https://sito-be.onrender.com/userData", { token });
                 if (res.data.status === "error" && res.data.data === "token expired") {
                     alert("Token scaduto. Fai login.");
                     window.localStorage.clear();

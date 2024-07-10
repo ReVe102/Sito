@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import './NotificationsPage.css';
 import axios from 'axios';
 
-const socket = io('http://localhost:3000');
+const socket = io('https://sito-be.onrender.com');
 
 const NotificationsPage = () => {
   const [notifications, setNotifications] = useState([]);
@@ -12,7 +12,7 @@ const NotificationsPage = () => {
     const fetchNotifications = async () => {
       try {
         const loggedUser = JSON.parse(localStorage.getItem('userData'));
-        const response = await axios.get(`http://localhost:3000/notifications/${loggedUser._id}`);
+        const response = await axios.get(`https://sito-be.onrender.com/notifications/${loggedUser._id}`);
         setNotifications(response.data);
       } catch (error) {
         console.error('Errore nel recuperare le notifiche', error);

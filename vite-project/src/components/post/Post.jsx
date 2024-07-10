@@ -16,9 +16,9 @@ export default function Post({ post }) {
             try {
                 let res;
                 if (post.privatoId) {
-                    res = await axios.get(`http://localhost:3000/privati/${post.privatoId}`);
+                    res = await axios.get(`https://sito-be.onrender.com/privati/${post.privatoId}`);
                 } else if (post.aziendaId) {
-                    res = await axios.get(`http://localhost:3000/aziende/${post.aziendaId}`);
+                    res = await axios.get(`https://sito-be.onrender.com/aziende/${post.aziendaId}`);
                 }
                 setUserOrAzienda(res.data);
             } catch (err) {
@@ -39,7 +39,7 @@ export default function Post({ post }) {
     
             const token = localStorage.getItem('token'); 
     
-            await axios.post(`http://localhost:3000/posts/like`, 
+            await axios.post(`https://sito-be.onrender.com/posts/like`, 
             { 
                 postId: post._id,
                 postType: post.privatoId ? 'user' : 'azienda'

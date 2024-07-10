@@ -10,7 +10,7 @@ export default class Home extends Component{
   }
   
   componentDidMount(){
-    fetch("http://localhost:3000/userData",{
+    fetch("https://sito-be.onrender.com/userData",{
             method:"POST",
             crossDomain:true,
             headers:{
