@@ -1,24 +1,19 @@
+.custom-background{
+    background-color: #ffffff99;
+}
 
-.login {
+.custom-rounded{
+    border-radius: 16px;
+}
+.wrapper {
     font-family: Arial, sans-serif;
-    overflow-y: auto;
     background: linear-gradient(#0F3443,#34E89E);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
     align-items: center;
     height: 100vh;
 }
-.login-container {
-    overflow-y: auto;
-    background-color: rgba(255, 255, 255, 0.6);
-    width:400px;
-    padding: 20px;
-    border:none;
-    border-radius: 12px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-}
+
+
+
 .login-container h2 {
     margin: 15px;
     text-align: center;
@@ -28,39 +23,29 @@
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 18px;
-    max-width: 600px; 
+    width: 600px; 
     margin: 0 auto;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
+    width:300px;
 }
 .inputs{
     display: flex;
     flex-direction: column;
     gap:20px;
 }
-.input {
-    display: flex;
-    align-items: center;
-    margin:auto;
-    width: 80%;
-    height:30px;
-    padding: 10px;
-    border: none;
-    border-radius: 8px;
-    background: #eaeaea;
 
-}
 
-.input img{
+img{
     margin: 0 10px;
-    height: 50%;
+    width: 10px;
 }
 
 .input input{
-    height: 50px;
+    height: 20px;
     width: 80%;
     background: transparent;
     border: none;

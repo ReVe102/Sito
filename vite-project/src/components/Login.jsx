@@ -6,12 +6,14 @@ import React, { useState } from "react";
 
 import password_icon from '../assets/password.png'
 import email_icon from '../assets/person.png'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [status, setStatus] = useState("privato")
+  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -56,41 +58,48 @@ export default function Login() {
               navigate("/Profilo");
             });
         } else {
-          alert(data.status);
+          const errorData = data.status
+          setErrorMessage("errore: "+ errorData)
         }
       });
   };
 
+  //La classe needs-validation è aggiunta al form per indicare che il form richiede la convalida.
+          //La classe was-validated è aggiunta condizionalmente per applicare gli stili di convalida una volta che l’utente ha tentato di inviare il form.
   return (
-    <div className="login">
-      <div className="login-container">
-        <h2>Accedi</h2>
-        <div className="form-group">
+    <div className="wrapper d-flex align-items-center justify-content-center w-100">
+      <div className='login custom-rounded p-4 custom-background'>
+        <h2 className="mb-4 text-center">Accedi</h2>
+        <div className="form-group">  
           <form onSubmit={handleSubmit} action="input" method="post">
-            <div className="inputs">
+            <div className="inputs mb-3">
 
-            <div className="input">
+            <div className="input was-validated w-100 h-100">
               <img src={email_icon} alt=""/>
               <input
-              type="text"
+              type="email"
               id="email"
               name="email"
+              className="form-control"
               onChange={(e) => setEmail(e.target.value)}
               required
               placeholder="E-mail"
               />
+              
             </div>
 
-            <div className="input">
+            <div className="input was-validated w-100 h-100">
               <img src={password_icon} alt=""/>
               <input
               type="password"
               id="password"
               name="password"
+              className="form-control"
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Password"
               required
             />
+            
             </div>
             
             
@@ -110,7 +119,12 @@ export default function Login() {
             
             
 
-            <button type="submit">Accedi</button>
+            <button type="submit" className='btn btn-success w-100 mt-3'>Accedi</button>
+            {errorMessage && (
+              <div className="alert alert-danger" role="alert">
+                {errorMessage}
+              </div>
+            )}
           </form>
         </div>
         <div className="domanda">Non hai un account?
