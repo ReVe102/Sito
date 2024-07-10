@@ -39,7 +39,7 @@ export default function Share() {
     useEffect(() => {
         const fetchCurrentUser = async () => {
             try {
-                const response = await axios.post("http://localhost:3000/userData", {
+                const response = await axios.post("https://sito-be.onrender.com/userData", {
                     token: window.localStorage.getItem("token")
                 });
                 const data = response.data;
@@ -76,7 +76,7 @@ export default function Share() {
 
     const uploadImage = async () => {
         try {
-            const response = await axios.post("http://localhost:3000/posts/uploadImage", {
+            const response = await axios.post("https://sito-be.onrender.com/posts/uploadImage", {
                 base64: image
             }, {
                 headers: {
@@ -101,7 +101,7 @@ export default function Share() {
 
     const getImage = async () => {
         try {
-            const response = await axios.get("http://localhost:3000/posts/images");
+            const response = await axios.get("https://sito-be.onrender.com/posts/images");
             setAllImage(response.data);
         } catch (error) {
             console.error("Error:", error);
@@ -133,7 +133,7 @@ export default function Share() {
                 newPost.aziendaId = userData._id;
             }
     
-            const response = await axios.post("http://localhost:3000/posts/create", newPost, {
+            const response = await axios.post("https://sito-be.onrender.com/posts/create", newPost, {
                 headers: {
                     "Content-Type": "application/json"
                 }
