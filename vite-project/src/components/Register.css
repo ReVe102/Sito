@@ -1,29 +1,21 @@
+.custom-background{
+    background-color: #ffffff99;
+}
 
-.register {
+.custom-rounded{
+    border-radius: 16px;
+}
+.wrapper {
     font-family: Arial, sans-serif;
     background: linear-gradient(#0F3443,#34E89E);
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
     align-items: center;
     height: 100vh;
-}
-.register-container {
-    overflow-y: auto;
-    background-color: rgba(255, 255, 255, 0.6);   
-     width:700px;
-    padding: 10px;
-    margin:40px;
-    border-radius: 16px;
-    max-height: 85vh; 
     
 }
-.register-container h2 {
-    margin: 15px;
-    text-align: center;
+.register{
+    overflow: auto;
+    max-height: 85vh;
 }
-
 
 .form-group {
     display: flex;

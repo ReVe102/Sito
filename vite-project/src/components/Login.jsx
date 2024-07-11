@@ -121,7 +121,7 @@ export default function Login() {
 
             <button type="submit" className='btn btn-success w-100 mt-3'>Accedi</button>
             {errorMessage && (
-              <div className="alert alert-danger" role="alert">
+              <div className="alert alert-danger " role="alert">
                 {errorMessage}
               </div>
             )}
