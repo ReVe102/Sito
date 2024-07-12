@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import io from 'socket.io-client';
-import { Link } from 'react-router-dom'; // Importa il componente Link
-import 'bootstrap-icons/font/bootstrap-icons.css'; // Assicurati di avere le icone di Bootstrap
+import { Link } from 'react-router-dom'; 
+import 'bootstrap-icons/font/bootstrap-icons.css'; 
 
 const socket = io('https://sito-be.onrender.com');
 

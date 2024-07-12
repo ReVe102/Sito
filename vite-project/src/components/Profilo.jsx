@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import Share from './share/Share';
 import PostLogin from './PostLogin';
-import Notifications from './Notifications'; // Importa il componente delle notifiche
+import Notifications from './Notifications'; 
 import './Profilo.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
@@ -124,7 +124,7 @@ const Profilo = () => {
           <Link to="/feedAziende" className="navbarButton">Business Area</Link>
           <Link to="/feedPrivati" className="navbarButton">Employee Area</Link>
           {userData.status === "azienda" && (
-            <Notifications /> // Sostituisci il tasto Notifiche con il componente delle notifiche
+            <Notifications /> 
           )}
         </div>
         <div className="right-button">
