@@ -150,11 +150,11 @@ const Profilo = () => {
               <i className="bi bi-pencil-square" id="iconamodifica" onClick={() => navigate("/updateUser", { state: userData })}></i></h2>
               </div>
               <div className="formsx">
-                <button className="btn btn-primary mb-2" onClick={() => setParagrafo("panoramica")}>Panoramica</button>
-                <button className="btn btn-primary mb-2" onClick={() => setParagrafo("lavoro")}>Lavoro</button>
-                <button className="btn btn-primary mb-2" onClick={() => setParagrafo("istruzione")}>Istruzione</button>
-                <button className="btn btn-primary mb-2" onClick={() => setParagrafo("certificazioni")}>Certificazioni</button>
-                <button className="btn btn-primary mb-2" onClick={() => setParagrafo("informazioni di contatto")}>Informazioni di contatto</button>
+              <button className="btn btn-primary mb-2 btn-dark-text" onClick={() => setParagrafo("panoramica")}>Panoramica</button>
+              <button className="btn btn-primary mb-2 btn-dark-text" onClick={() => setParagrafo("lavoro")}>Lavoro</button>
+              <button className="btn btn-primary mb-2 btn-dark-text" onClick={() => setParagrafo("istruzione")}>Istruzione</button>
+              <button className="btn btn-primary mb-2 btn-dark-text" onClick={() => setParagrafo("certificazioni")}>Certificazioni</button>
+              <button className="btn btn-primary mb-2 btn-dark-text" onClick={() => setParagrafo("informazioni di contatto")}>Informazioni di contatto</button>
               </div>
             </div>
             <div className="vertical-line"></div>
@@ -207,10 +207,10 @@ const Profilo = () => {
                 <i className="bi bi-pencil-square" id="iconamodifica" onClick={() => navigate("/updateUser", { state: userData })}></i></h2>
               </div>
               <div className="formsx">
-                <button className="btn btn-primary mb-2" onClick={() => setParagrafo("panoramica")}>Panoramica</button>
-                <button className="btn btn-primary mb-2" onClick={() => setParagrafo("profilo aziendale")}>Profilo Aziendale</button>
-                <button className="btn btn-primary mb-2" onClick={() => setParagrafo("dettagli organizzativi")}>Dettagli organizzativi</button>
-                <button className="btn btn-primary mb-2" onClick={() => setParagrafo("contatti e sedi")}>Contatti e sedi</button>
+                <button className="btn btn-primary mb-2 bpn-dark-text" onClick={() => setParagrafo("panoramica")}>Panoramica</button>
+                <button className="btn btn-primary mb-2 bpn-dark-text" onClick={() => setParagrafo("profilo aziendale")}>Profilo Aziendale</button>
+                <button className="btn btn-primary mb-2 bpn-dark-text" onClick={() => setParagrafo("dettagli organizzativi")}>Dettagli organizzativi</button>
+                <button className="btn btn-primary mb-2 bpn-dark-text" onClick={() => setParagrafo("contatti e sedi")}>Contatti e sedi</button>
               </div>
             </div>
             <div className="vertical-line"></div>

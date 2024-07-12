@@ -186,17 +186,16 @@ const ProfiloUtente = () => {
     };
     const whatsappLink = `https://wa.me/${userOrAzienda.cellulare||userOrAzienda.telefono}`;
 
-
     return (
         <div className="container">
-         <div className="buttonsUtente">
-                    <Link to="/feedAziende" className="navbarButtonUtente">Business Area</Link>
-                    <Link to="/feedPrivati" className="navbarButtonUtente">Employee Area</Link>
-        </div>
+            <div className="buttonsUtente">
+                <Link to="/feedAziende" className="navbarButtonUtente">Business Area</Link>
+                <Link to="/feedPrivati" className="navbarButtonUtente">Employee Area</Link>
+            </div>
             <div className="header">
                 {userOrAzienda.image === "" || userOrAzienda.image == null
-                    ? <img src="/default-pfp-1.jpg" alt="Profile"/>
-                    : <img src={userOrAzienda.image} alt="Profile"/>}
+                    ? <img src="/default-pfp-1.jpg" alt="Profile" />
+                    : <img src={userOrAzienda.image} alt="Profile" />}
                 <div className="nomeutente">
                     <h1>{userOrAzienda.name} {userOrAzienda.status}</h1>
                     <br />
@@ -206,34 +205,36 @@ const ProfiloUtente = () => {
                 </button>
             </div>
             <div className='midbar-container'>
-        <div className='midbar'>
-            <div className="footerUtente">
-                <div className="leftbar">
-                    <div className="titoloLeftbar"><h2>Informazioni</h2></div>
-                    {renderInformazioni()}
-                </div>
-                <div className="vertical-line"></div>
-                <div className="paragrafo">
-                    <h2>{paragrafo}</h2>
-                    <div className="testo">
-                        {renderParagrafo()}
+                <div className='midbar'>
+                    <div className="footerUtente">
+                        <div className="leftbar">
+                            <div className="titoloLeftbar"><h2>Informazioni</h2></div>
+                            {renderInformazioni()}
+                        </div>
+                        <div className="vertical-line"></div>
+                        <div className="paragrafo">
+                            <h2>{paragrafo}</h2>
+                            <div className="testo">
+                                {renderParagrafo()}
+                            </div>
+                        </div>
+                    </div>
+                    <div className="notifications">
+                        <div className="qr-section">
+                            <div className='notifichefissato'>
+                                <h2>Contattami su Whatsapp </h2>
+                                <hr />
+                            </div>
+                            <div className='notifichescorrere'>
+                                <QRCode value={whatsappLink} size={200} />
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div className="notifications">
-                <div className='notifichefissato'>
-                <h2>Contattami su Whatsapp </h2>
-                <hr/>
-            </div>
-            <div className='notifichescorrere'>
-                <QRCode value={whatsappLink} size={200} />
-            </div>
-            </div>
-            </div>
-            </div>
             <div className="mainbar">
                 <div className="posts">
-                {posts.map((post) => (
+                    {posts.map((post) => (
                         <Post key={post._id} post={post} />
                     ))}
                 </div>
