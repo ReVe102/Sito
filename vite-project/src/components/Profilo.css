@@ -207,41 +207,6 @@ ul li {
     width: 1420px; 
 }
 
-.notifications {
-    width: 30%;
-    height: 330px;
-    font-family: 'Arial', sans-serif; 
-    font-size: 18px; 
-    color: #333; 
-    background-color: rgba(255, 255, 255, 0.6);
-    padding: 15px; 
-    border-radius: 8px;
-    margin-right: 55px;
-}
-
-.notifications > h2 {
-    text-align: center;
-    margin-top: 5px;
-}
-
-hr {
-    border: none; 
-    height: 3px; 
-    background-color: #d1d1d1; 
-    margin: 15px 0;
-}
-
-.notifichescorrere {
-    overflow-y: scroll;
-    top: 0;
-    background-color: transparent;
-    height: 200px;
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
 #iconamodifica {
     cursor: pointer !important;
 }
@@ -330,4 +295,57 @@ hr {
     color: white;
     border: none;
     cursor: pointer;
+}
+
+/* Stile per la campanella delle notifiche */
+.notifications .badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+}
+
+.notifications .bi-bell {
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.notifications {
+  display: flex;
+  align-items: center;
+}
+
+/* Specifico per la sezione QR code */
+.qr-section {
+    width: 30%;
+    height: 330px;
+    font-family: 'Arial', sans-serif; 
+    font-size: 18px; 
+    color: #333; 
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 15px; 
+    border-radius: 8px;
+    margin-right: 55px;
+}
+
+.qr-section > h2 {
+    text-align: center;
+    margin-top: 5px;
+}
+
+.qr-section hr {
+    border: none; 
+    height: 3px; 
+    background-color: #d1d1d1; 
+    margin: 15px 0;
+}
+
+.qr-section .notifichescorrere {
+    overflow-y: scroll;
+    top: 0;
+    background-color: transparent;
+    height: 200px;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

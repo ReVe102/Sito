@@ -2,19 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import Share from './share/Share';
 import PostLogin from './PostLogin';
-import Notifications from './Notifications';
+import Notifications from './Notifications'; // Importa il componente delle notifiche
 import './Profilo.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit} from '@fortawesome/free-solid-svg-icons';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import QRCode from 'qrcode.react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-
 
 import axios from 'axios';
 import io from 'socket.io-client';
 
 const socket = io('https://sito-be.onrender.com');
-
 
 const Profilo = () => {
   const navigate = useNavigate();
@@ -30,7 +28,7 @@ const Profilo = () => {
       if (!token) {
         throw new Error('Token non trovato');
       }
-      const response = await axios.delete(`http://localhost:3000/posts/${postType}/${postId}`, {
+      const response = await axios.delete(`https://sito-be.onrender.com/posts/${postType}/${postId}`, {
         headers: {
           Authorization: token
         }  
@@ -110,10 +108,6 @@ const Profilo = () => {
     navigate('/Login');
   };
 
-  const handleNotificationsClick = () => {
-    navigate('/notifications'); 
-  };
-
   if (loading) {
     return <div>Loading...</div>;
   }
@@ -123,7 +117,6 @@ const Profilo = () => {
   }
   const whatsappLink = `https://wa.me/${userData.cellulare||userData.telefono}`;
 
-
   return (
     <div className="container">
       <div className="buttons">
@@ -131,10 +124,8 @@ const Profilo = () => {
           <Link to="/feedAziende" className="navbarButton">Business Area</Link>
           <Link to="/feedPrivati" className="navbarButton">Employee Area</Link>
           {userData.status === "azienda" && (
-          <button className="navbarButton" type="submit" onClick={handleNotificationsClick}>
-            Notifiche 
-          </button>
-        )}
+            <Notifications /> // Sostituisci il tasto Notifiche con il componente delle notifiche
+          )}
         </div>
         <div className="right-button">
           <button className="navbarButton" onClick={logout}>Logout</button>
@@ -267,7 +258,7 @@ const Profilo = () => {
             </div>
           </div>
         )}
-        <div className="notifications">
+        <div className="qr-section"> {/* Aggiornato per usare la nuova classe CSS */}
           <div className='notifichefissato'>
             <h2>Contattami su Whatsapp </h2>
             <hr/>
