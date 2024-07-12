@@ -13,7 +13,7 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 import axios from 'axios';
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:3000');
+const socket = io('https://sito-be.onrender.com');
 
 
 const Profilo = () => {
@@ -33,7 +33,7 @@ const Profilo = () => {
       const response = await axios.delete(`http://localhost:3000/posts/${postType}/${postId}`, {
         headers: {
           Authorization: token
-        }
+        }  
       });
       if (response.status === 200) {
         alert('Post eliminato con successo');
@@ -52,7 +52,7 @@ const Profilo = () => {
           throw new Error('Token non trovato');
         }
 
-        const userDataResponse = await axios.post('http://localhost:3000/userData', { token });  
+        const userDataResponse = await axios.post('https://sito-be.onrender.com/userData', { token });  
         if (userDataResponse.data.status === 'error' && userDataResponse.data.data === 'token expired') {
           alert('Token scaduto. Effettua il login.');
           window.localStorage.clear();
@@ -61,7 +61,7 @@ const Profilo = () => {
           setUserData(userDataResponse.data.data);
           window.localStorage.setItem('userData', JSON.stringify(userDataResponse.data.data));
 
-          const postsResponse = await axios.get('http://localhost:3000/posts/profilo', {
+          const postsResponse = await axios.get('https://sito-be.onrender.com/posts/profilo', {
             headers: {
               Authorization: token
             }
@@ -79,7 +79,7 @@ const Profilo = () => {
 
     const fetchNotifications = async () => {
       try {
-        const response = await axios.get('http://localhost:3000/notifications');
+        const response = await axios.get('https://sito-be.onrender.com/notifications');
         setNotifications(response.data);
       } catch (error) {
         console.error('Errore nel recuperare le notifiche', error);
