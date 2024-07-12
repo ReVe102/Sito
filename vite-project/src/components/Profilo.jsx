@@ -7,11 +7,13 @@ import './Profilo.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEdit} from '@fortawesome/free-solid-svg-icons';
 import QRCode from 'qrcode.react';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+
 
 import axios from 'axios';
 import io from 'socket.io-client';
 
-const socket = io('https://sito-be.onrender.com');
+const socket = io('http://localhost:3000');
 
 
 const Profilo = () => {
@@ -21,7 +23,7 @@ const Profilo = () => {
   const [loading, setLoading] = useState(true);
   const [paragrafo, setParagrafo] = useState('panoramica');
   const [notifications, setNotifications] = useState([]);
-
+  
   const handleDelete = async (postId, postType) => {
     try {
       const token = window.localStorage.getItem('token');
@@ -50,7 +52,7 @@ const Profilo = () => {
           throw new Error('Token non trovato');
         }
 
-        const userDataResponse = await axios.post('https://sito-be.onrender.com/userData', { token });
+        const userDataResponse = await axios.post('http://localhost:3000/userData', { token });  
         if (userDataResponse.data.status === 'error' && userDataResponse.data.data === 'token expired') {
           alert('Token scaduto. Effettua il login.');
           window.localStorage.clear();
@@ -59,16 +61,16 @@ const Profilo = () => {
           setUserData(userDataResponse.data.data);
           window.localStorage.setItem('userData', JSON.stringify(userDataResponse.data.data));
 
-          const postsResponse = await axios.get('https://sito-be.onrender.com/posts/profilo', {
+          const postsResponse = await axios.get('http://localhost:3000/posts/profilo', {
             headers: {
               Authorization: token
             }
           });
 
           const sortedPosts = postsResponse.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-          setUserPosts(sortedPosts);
+          setUserPosts(sortedPosts);  
         }
-        setLoading(false);
+        setLoading(false); 
       } catch (error) {
         console.error('Errore nel recuperare i dati dell\'utente', error);
         setLoading(false);
@@ -77,7 +79,7 @@ const Profilo = () => {
 
     const fetchNotifications = async () => {
       try {
-        const response = await axios.get('https://sito-be.onrender.com/notifications');
+        const response = await axios.get('http://localhost:3000/notifications');
         setNotifications(response.data);
       } catch (error) {
         console.error('Errore nel recuperare le notifiche', error);
@@ -93,15 +95,15 @@ const Profilo = () => {
     });
 
     return () => {
-      socket.off('notification');
+      socket.off('notification'); //rimuove ascoltatore precedentemente registrato nell'evento notification
     };
   }, [navigate]);
 
   useEffect(() => {
     if (userData) {
-      socket.emit('join', userData._id);
+      socket.emit('join', userData._id); 
     }
-  }, [userData]);
+  }, [userData]);   
 
   const logout = () => {
     window.localStorage.clear();
@@ -109,7 +111,7 @@ const Profilo = () => {
   };
 
   const handleNotificationsClick = () => {
-    navigate('/notifications');
+    navigate('/notifications'); 
   };
 
   if (loading) {
@@ -153,14 +155,15 @@ const Profilo = () => {
           <div className="footer">
             <div className="leftbar">
               <div className="titoloLeftbar">
-                <h2>Informazioni <FontAwesomeIcon id="iconamodifica" icon={faEdit} onClick={() => navigate("/updateUser", { state: userData })} /></h2>
+              <h2 className="titoloInfo">Informazioni 
+              <i className="bi bi-pencil-square" id="iconamodifica" onClick={() => navigate("/updateUser", { state: userData })}></i></h2>
               </div>
               <div className="formsx">
-                <button onClick={() => setParagrafo("panoramica")}>Panoramica</button>
-                <button onClick={() => setParagrafo("lavoro")}>Lavoro</button>
-                <button onClick={() => setParagrafo("istruzione")}>Istruzione</button>
-                <button onClick={() => setParagrafo("certificazioni")}>Certificazioni</button>
-                <button onClick={() => setParagrafo("informazioni di contatto")}>Informazioni di contatto</button>
+                <button className="btn btn-primary mb-2" onClick={() => setParagrafo("panoramica")}>Panoramica</button>
+                <button className="btn btn-primary mb-2" onClick={() => setParagrafo("lavoro")}>Lavoro</button>
+                <button className="btn btn-primary mb-2" onClick={() => setParagrafo("istruzione")}>Istruzione</button>
+                <button className="btn btn-primary mb-2" onClick={() => setParagrafo("certificazioni")}>Certificazioni</button>
+                <button className="btn btn-primary mb-2" onClick={() => setParagrafo("informazioni di contatto")}>Informazioni di contatto</button>
               </div>
             </div>
             <div className="vertical-line"></div>
@@ -209,14 +212,14 @@ const Profilo = () => {
           <div className="footer">
             <div className="leftbar">
               <div className="titoloLeftbar">
-                <h2>Informazioni</h2>
-                <FontAwesomeIcon icon={faEdit} onClick={() => navigate("/updateUser", { state: userData })} />
+                <h2>Informazioni 
+                <i className="bi bi-pencil-square" id="iconamodifica" onClick={() => navigate("/updateUser", { state: userData })}></i></h2>
               </div>
               <div className="formsx">
-                <button onClick={() => setParagrafo("panoramica")}>Panoramica</button>
-                <button onClick={() => setParagrafo("profilo aziendale")}>Profilo Aziendale</button>
-                <button onClick={() => setParagrafo("dettagli organizzativi")}>Dettagli organizzativi</button>
-                <button onClick={() => setParagrafo("contatti e sedi")}>Contatti e sedi</button>
+                <button className="btn btn-primary mb-2" onClick={() => setParagrafo("panoramica")}>Panoramica</button>
+                <button className="btn btn-primary mb-2" onClick={() => setParagrafo("profilo aziendale")}>Profilo Aziendale</button>
+                <button className="btn btn-primary mb-2" onClick={() => setParagrafo("dettagli organizzativi")}>Dettagli organizzativi</button>
+                <button className="btn btn-primary mb-2" onClick={() => setParagrafo("contatti e sedi")}>Contatti e sedi</button>
               </div>
             </div>
             <div className="vertical-line"></div>
@@ -281,8 +284,8 @@ const Profilo = () => {
       <div key={post._id}>
       <PostLogin post={post} handleDelete={handleDelete} postType={userData.status === 'azienda' ? 'azienda' : 'privato'}/>
       </div>
-      ))}
-      </div>
+))}
+    </div>
   );
 };
 

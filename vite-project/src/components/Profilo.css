@@ -19,7 +19,7 @@ body {
     position: relative;
 }
 
-.header>img {
+.header > img {
     width: 180px;
     height: 180px;
     box-shadow: 0px 0px 10px rgba(0, 0.9, 0.4, 0.6);
@@ -80,7 +80,7 @@ body {
     margin: 20px 76px;
     border-radius: 8px;
     width: 900px;
-    height: calc(100% + 300px);
+    height: calc(100% + 400px) !important;
 }
 
 .leftbar {
@@ -94,12 +94,12 @@ body {
     margin-bottom: 25px;
 }
 
-.leftbar>h2 {
+.leftbar > h2 {
     margin-left: 20px;
     padding: 5px;
 }
 
-.formsx>button {
+.formsx > button {
     text-align: left;
     align-items: center;
     padding-left: 20px;
@@ -111,7 +111,7 @@ body {
     border: none;
 }
 
-.formsx>button:hover {
+.formsx > button:hover {
     background-color: #d1d1d1;
 }
 
@@ -126,25 +126,49 @@ body {
     font-size: 18px; 
     line-height: 1.6; 
     color: #333; 
-    background-color:transparent;
+    background-color: transparent;
     height: 260px;
     padding: 5px; 
-    margin-top: -38px;
+    margin-top: -10px;
 }
 
-.paragrafo{
-    flex:6;
+.paragrafo {
+    flex: 6;
 }
 
-.paragrafo>h2 {
+.paragrafo > h2 {
     margin-left: 20px;
     padding: 10px;
     color: #3a3535;
-    margin-top: 5px;
+    margin-top: -20px !important;
+    margin-bottom: 30px;
+}
+
+.paragrafo .testo {
+    margin-top: -10mm; 
+}
+
+.footer .titoloLeftbar .titoloInfo {
+    font-size: 1.25em; 
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.footer .titoloLeftbar .icona-modifica {
+    font-size: 0.75em !important;
 }
 
 ul li {
     margin: 20px;
+}
+
+.titoloLeftbar h2, .paragrafo h2 {
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
 }
 
 .titoloLeftbar {
@@ -195,7 +219,7 @@ ul li {
     margin-right: 55px;
 }
 
-.notifications>h2 {
+.notifications > h2 {
     text-align: center;
     margin-top: 5px;
 }
@@ -210,7 +234,7 @@ hr {
 .notifichescorrere {
     overflow-y: scroll;
     top: 0;
-    background-color:transparent;
+    background-color: transparent;
     height: 200px;
     justify-content: center;
     display: flex;
@@ -219,7 +243,7 @@ hr {
 }
 
 #iconamodifica {
-    cursor: pointer;
+    cursor: pointer !important;
 }
 
 #chatButton {
@@ -236,69 +260,69 @@ hr {
 }
 
 .navbarButtonUtente {
-font-size: 17px;
-background-color: transparent !important; 
-color: white !important; 
-border: 1px solid white !important; 
-border-radius: 8px !important; 
-padding: 10px 20px !important;
-margin: 10px !important;
-cursor: pointer;
-text-decoration: none;
+    font-size: 17px;
+    background-color: transparent !important; 
+    color: white !important; 
+    border: 1px solid white !important; 
+    border-radius: 8px !important; 
+    padding: 10px 20px !important;
+    margin: 10px !important;
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .navbarButtonUtente:hover {
-background-color: rgba(255, 255, 255, 0.1) !important; 
+    background-color: rgba(255, 255, 255, 0.1) !important; 
 }
 
 .buttonsUtente {
-display: flex;
-justify-content: flex-start; 
-align-items: center;
-width: 100%;
-background-color: transparent;
-margin-top: 70px;
-padding-bottom: -20px; 
-margin-left: 57px
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    width: 100%;
+    background-color: transparent;
+    margin-top: 70px;
+    padding-bottom: -20px; 
+    margin-left: 57px
 }
 
 .footerUtente {
-background-color: rgba(255, 255, 255, 0.6);
-display: flex;
-align-items: flex-start;
-justify-content: center; 
-border-radius: 12px;
-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-margin: 20px auto;
-width: 900px;
-padding-bottom: 60px;
-padding-top: 20px;
-padding-left: 20px;
-padding-right: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center; 
+    border-radius: 12px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    width: 900px;
+    padding-bottom: 60px;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
-#notificheAzienda{
+#notificheAzienda {
     margin-left: 200px;
 }
-.midbar{
+
+.midbar {
     display: flex;
     flex-direction: row; 
     align-items: center; 
     gap: 20px; 
 }
 
-.midbar-container{
+.midbar-container {
     display: flex;
-  justify-content: center; 
-  align-items: center; 
-  margin-left: 40px;
+    justify-content: center; 
+    align-items: center; 
+    margin-left: 40px;
 }
-.sonointeressato{
+
+.sonointeressato {
     margin-left: 300px;
     display: block;
-
-    width:15%;
-
+    width: 15%;
     padding: 10px;
     background-color: #0aac68;
     border-radius: 16px;
