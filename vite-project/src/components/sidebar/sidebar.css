@@ -48,12 +48,18 @@
     width: 100%;
 }
 
-.sidebarListItem:hover {
-    text-decoration: none;
-    background-color: #d1d1d1;
-}
-
 .sidebarListItemText {
     font-size: 18px;
     color: #333;
+}
+
+.customBtn {
+    background-color: transparent !important;
+    border: none !important;
+    color: #333 !important; 
+    box-shadow: none !important; 
+}
+
+.customBtn:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
 }

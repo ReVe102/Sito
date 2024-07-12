@@ -10,19 +10,18 @@ export default function Sidebar(){
             <div className="sidebarWrapper">
                 <ul className="sidebarList">
                     <li className="sidebarListItem">
-                    <Link to="/feedPrivati" className="sidebarLink">
+                    <Link to="/feedPrivati" className="btn btn-block sidebarLink customBtn">
                         <BadgeIcon className="sidebarIcon"/>
                         <span className="sidebarListItemText">Employee Area</span>
                     </Link>   
                     </li>
                     <li className="sidebarListItem">
-                    <Link to="/feedAziende" className="sidebarLink">
+                    <Link to="/feedAziende" className="btn btn-block sidebarLink customBtn">
                         <BusinessIcon className="sidebarIcon"/>
                         <span className="sidebarListItemText">Business Area</span>
                     </Link>   
                     </li>
-                    
-                    <Link to="/profilo" className="sidebarLink">
+                    <Link to="/profilo" className="btn btn-block sidebarLink customBtn">
                     <li className="sidebarListItem">
                         <PersonIcon className="sidebarIcon"/>
                         <span className="sidebarListItemText">Profile</span>
