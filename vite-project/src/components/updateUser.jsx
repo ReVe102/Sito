@@ -122,7 +122,7 @@ function UpdateUser(){
             <div className="updateuser custom-rounded p-4 custom-background w-50">
                 <h2 className='mt-4 text-center'>Modifica Profilo</h2>
                 <div className="form-group w-100">
-                <div className='inputs w-100'>
+                <div className='input-container'>
                 <input
                     type="text"
                     id="nome"
