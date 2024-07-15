@@ -114,7 +114,6 @@ function UpdateUser(){
     
         
     }
-    console.log('QQQQuserData:', userData);
 
 
     return(
