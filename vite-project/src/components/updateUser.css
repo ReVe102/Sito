@@ -1,0 +1,50 @@
+.custom-background{
+    background-color: #ffffff99;
+}
+
+.custom-rounded{
+    border-radius: 16px;
+}
+.wrapper {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(#0F3443,#34E89E);
+    align-items: center;
+    height: 100vh;
+    
+}
+.updateuser{
+    overflow: auto;
+    max-height: 85vh;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+}
+.input {
+    display: flex;
+    align-items: center;
+    margin:auto;
+    width: 80%;
+    height:30px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #eaeaea;
+
+}
+
+
+input{
+    height: 50px;
+    width: 80%;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #797979
+}

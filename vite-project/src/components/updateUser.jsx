@@ -1,5 +1,7 @@
 import { useLocation } from "react-router"
 import React, { useState, useEffect } from 'react';
+import "./updateUser.css";
+
 
 function UpdateUser(){
 
@@ -117,11 +119,11 @@ function UpdateUser(){
 
     return(
 
-        <div className="login">
-            <div className="login-container">
-                <h2>Modifica Profilo</h2>
-                <div className="inputs">
-                <div className="input-container">
+        <div className="wrapper d-flex align-items-center justify-content-center w-100">
+            <div className="updateuser custom-rounded p-4 custom-background w-50">
+                <h2 className='mt-4 text-center'>Modifica Profilo</h2>
+                <div className="form-group w-100">
+                <div className='inputs w-100'>
                 <input
                     type="text"
                     id="nome"
@@ -571,7 +573,7 @@ function UpdateUser(){
                 <label for="file" class="input-label">Carica immagine</label>
             </div>
                     
-                        <button onClick={updateData} className="pulsanteRegistrati" >Update details</button>
+                        <button onClick={updateData} className="btn btn-success w-50 mt-4" >Update details</button>
                 </div>
             </div>
         </div>

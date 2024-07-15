@@ -50,26 +50,6 @@ input{
 }
 
 
-.pulsanteRegistrati {
-    display: block;
-    margin: 30px auto;
-
-    width:80%;
-
-    padding: 10px;
-    background-color: #198e5d;
-
-    font-size: medium;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-
-
-}
-.pulsanteRegistrati:hover {
-    background-color: #0f583a;
-}
 
 .domanda{
     padding-left: 60px;
