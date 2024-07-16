@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import { Link } from 'react-router-dom';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import './Notifications.css'; // Assicurati di importare il file CSS
+import './Notifications.css'; 
 
 const socket = io('https://sito-be.onrender.com');
 

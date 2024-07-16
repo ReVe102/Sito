@@ -259,7 +259,7 @@ const Profilo = () => {
             </div>
           </div>
         )}
-        <div className="qr-section"> {/* Aggiornato per usare la nuova classe CSS */}
+        <div className="qr-section"> 
           <div className='notifichefissato'>
             <h2>Contattami su Whatsapp </h2>
             <hr/>
