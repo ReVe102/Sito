@@ -87,10 +87,8 @@ export default function Share() {
             });
             const data = response.data;
             if (data.Status === "ok") {
-                alert("Image uploaded successfully!");
                 return data;
             } else {
-                alert("Image upload failed!");
                 throw new Error("Image upload failed");
             }
         } catch (error) {
@@ -185,7 +183,7 @@ export default function Share() {
                             />
                         </label>
                     </div>
-                    {image && <img width={100} height={100} src={image} alt="Uploaded" />}
+                    {image && <img className="uploadedImage" src={image} alt="Uploaded" />}
                     <button className="shareButton" type="submit">
                         Share <SendIcon className="sendIcon" />
                     </button>

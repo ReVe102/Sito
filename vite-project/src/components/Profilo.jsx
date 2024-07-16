@@ -34,7 +34,6 @@ const Profilo = () => {
         }  
       });
       if (response.status === 200) {
-        alert('Post eliminato con successo');
         setUserPosts(userPosts.filter(post => post._id !== postId)); 
       }
     } catch (error) {

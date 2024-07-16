@@ -87,3 +87,8 @@
     font-size: 10px
 }
 
+.uploadedImage {
+    width: 100px;  
+    height: auto; 
+    margin-top: 10px;  
+}
