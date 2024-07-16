@@ -4,11 +4,8 @@ import Share from './share/Share';
 import PostLogin from './PostLogin';
 import Notifications from './Notifications'; 
 import './Profilo.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import QRCode from 'qrcode.react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
-
 import axios from 'axios';
 import io from 'socket.io-client';
 
@@ -21,7 +18,8 @@ const Profilo = () => {
   const [loading, setLoading] = useState(true);
   const [paragrafo, setParagrafo] = useState('panoramica');
   const [notifications, setNotifications] = useState([]);
-  
+  const [newNotificationsCount, setNewNotificationsCount] = useState(0);
+
   const handleDelete = async (postId, postType) => {
     try {
       const token = window.localStorage.getItem('token');
@@ -34,6 +32,7 @@ const Profilo = () => {
         }  
       });
       if (response.status === 200) {
+        alert('Post eliminato con successo');
         setUserPosts(userPosts.filter(post => post._id !== postId)); 
       }
     } catch (error) {
@@ -88,11 +87,11 @@ const Profilo = () => {
 
     socket.on('notification', (data) => {
       setNotifications((prevNotifications) => [...prevNotifications, data]);
-      alert(`Nuova notifica: ${data.message}`);
+      setNewNotificationsCount((prevCount) => prevCount + 1); // Incrementa il contatore
     });
 
     return () => {
-      socket.off('notification'); //rimuove ascoltatore precedentemente registrato nell'evento notification
+      socket.off('notification'); // Rimuove ascoltatore precedentemente registrato nell'evento notification
     };
   }, [navigate]);
 
@@ -101,6 +100,10 @@ const Profilo = () => {
       socket.emit('join', userData._id); 
     }
   }, [userData]);   
+
+  const resetNewNotificationsCount = () => {
+    setNewNotificationsCount(0);
+  };
 
   const logout = () => {
     window.localStorage.clear();
@@ -114,7 +117,7 @@ const Profilo = () => {
   if (!userData) {
     return <div>Dati utente non disponibili.</div>;
   }
-  const whatsappLink = `https://wa.me/${userData.cellulare||userData.telefono}`;
+  const whatsappLink = `https://wa.me/${userData.cellulare || userData.telefono}`;
 
   return (
     <div className="container">
@@ -123,7 +126,7 @@ const Profilo = () => {
           <Link to="/feedAziende" className="navbarButton">Business Area</Link>
           <Link to="/feedPrivati" className="navbarButton">Employee Area</Link>
           {userData.status === "azienda" && (
-            <Notifications /> 
+            <Notifications newNotificationsCount={newNotificationsCount} resetNewNotificationsCount={resetNewNotificationsCount} /> 
           )}
         </div>
         <div className="right-button">
@@ -136,7 +139,6 @@ const Profilo = () => {
           <h1>{userData.name}</h1>
           <br />
         </div>
-        
         <br />
       </div>
 
@@ -257,7 +259,7 @@ const Profilo = () => {
             </div>
           </div>
         )}
-        <div className="qr-section"> {/* Aggiornato per usare la nuova classe CSS */}
+        <div className="qr-section"> 
           <div className='notifichefissato'>
             <h2>Contattami su Whatsapp </h2>
             <hr/>

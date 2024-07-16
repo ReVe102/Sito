@@ -1,6 +1,5 @@
 .notifications {
     padding: 10px;
-    background-color: #f8f9fa;
     border: 1px solid #e9ecef;
     border-radius: 5px;
     margin: 10px 0;
@@ -22,5 +21,21 @@
   
   .notifications li:last-child {
     border-bottom: none;
+  }
+  
+  .notifications {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .notifications .badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background-color: rgb(196, 17, 17);
+    color: white;
+    display: inline-block;
   }
   
