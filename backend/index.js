@@ -8,7 +8,7 @@ const http = require('http');
 const { Server } = require('socket.io');
 const Notification = require('./models/Notification');
 
-dotenv.config(); // Carica le variabili d'ambiente dal file .env
+dotenv.config(); 
 
 app.use(cors());
 app.use(express.json());

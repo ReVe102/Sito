@@ -286,19 +286,19 @@ exports.getAllAziendaPosts = async (req, res) => {
     try {
         const aziendaPosts = await PostAziende.aggregate([
             {
-                $sort: { createdAt: -1 }  //Ordino post per data di creazione
+                $sort: { createdAt: -1 }  
             },
             {
                 $group: {
                     _id: "$aziendaId", 
-                    latestPost: { $first: "$$ROOT" }  //Raggruppa i documenti per aziendaId.Per ogni gruppo, latestPost contiene il primo documento del gruppo(più recente grazie all'ordinamento)
+                    latestPost: { $first: "$$ROOT" }  
                 }
             },
             {
-                $replaceRoot: { newRoot: "$latestPost" }  //Sostituisce il documento corrente con il contenuto di latestPost.
+                $replaceRoot: { newRoot: "$latestPost" }  
             },
             {
-                $sort: { createdAt: -1 } //Dopo aver ottenuto i post più recenti per ogni azienda, li riordiniamo per data di creazione.
+                $sort: { createdAt: -1 } 
             }
         ]);
         res.status(200).json(aziendaPosts);
@@ -415,12 +415,12 @@ exports.createPost = async (req, res) => {
 //logica per recuperare i dati di un privato dato l'ID
 exports.getPrivatoById = async (req, res) => {
     try {
-        const privato = await PrivatoModel.findById(req.params.privatoId);  //Questa riga tenta di trovare un documento nel database utilizzando il modello PrivatoModel e il metodo findById, che cerca un documento per ID(L'ID viene preso dai parametri della richiesta (req.params.privatoId))
+        const privato = await PrivatoModel.findById(req.params.privatoId);  
         if (!privato) {
             return res.sendStatus(404);
         }
         console.log('Privato trovato:', privato); 
-        res.json(privato); //Questa riga invia una risposta JSON al client contenente i dati del documento privato trovato. Utilizzare res.json è un modo comune per inviare dati strutturati in formato JSON al client.
+        res.json(privato); 
     } catch (err) {
         res.status(500).json(err);
     }
@@ -463,7 +463,7 @@ exports.getPostsByPrivatoId = async (req, res) => {
         if (posts.length === 0) {
             return res.sendStatus(404);
         }
-        res.status(200).json(posts); //I post trovati vengono inviati al client in formato JSON
+        res.status(200).json(posts); 
     } catch (err) {
         console.error(err);
         res.sendStatus(500);
