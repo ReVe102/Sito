@@ -145,7 +145,7 @@ body {
     margin-left: 20px;
     padding: 10px;
     color: #3a3535;
-    margin-top: -20px !important;
+    margin-top: 10px !important;
     margin-bottom: 30px;
 }
 
@@ -334,7 +334,6 @@ ul li {
     margin-right: 55px;
     text-align: center;
     position: relative;
-    left: 38px;
 }
 
 .qr-section > h2 {
@@ -366,6 +365,8 @@ ul li {
     margin: 0 auto;
 }
 
-.btn-dark-text {
-    color: #333333 !important; 
+.btn-primary {
+    --bs-btn-color: #333333 !important; 
 }
+
+
