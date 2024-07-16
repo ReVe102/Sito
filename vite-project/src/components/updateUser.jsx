@@ -127,7 +127,7 @@ function UpdateUser(){
                     type="text"
                     id="nome"
                     name="name"
-                    className='input'
+                    className='input h-100'
                     required
                     placeholder=" "
                     defaultValue={userData.name}
@@ -141,7 +141,7 @@ function UpdateUser(){
                     type="text"
                     id="email"
                     name="email"
-                    className='input'
+                    className='input h-100'
                     disabled
                     placeholder=" "
                     defaultValue={userData.email}
@@ -155,7 +155,7 @@ function UpdateUser(){
                     id="datanascita"
                     name="datanascita"
                     required
-                    className='input'
+                    className='input h-100'
                     placeholder=" "
                     defaultValue={userData.datanascita}
                     onChange={handleChange}
@@ -169,7 +169,7 @@ function UpdateUser(){
                         <input
                             type="text"
                             id="biografia"
-                            className='input'
+                            className='input h-100'
                             name="biografia"
                             required
                             placeholder=" "
@@ -184,7 +184,7 @@ function UpdateUser(){
                             type="text"
                             id="impiego"
                             name="impiego"
-                            className='input'
+                            className='input h-100'
                             required
                             placeholder=" "
                             defaultValue={userData.impiego}
@@ -197,7 +197,7 @@ function UpdateUser(){
                         <input
                             type="text"
                             id="ultimolavoro"
-                            className='input'
+                            className='input h-100'
                             name="ultimolavoro"
                             required
                             placeholder=" "
@@ -213,7 +213,7 @@ function UpdateUser(){
                             type="text"
                             id="lavoriprecedenti"
                             name="lavoriprecedenti"
-                            className='input'
+                            className='input h-100'
                             required
                             placeholder=" "
                             defaultValue={userData.lavoriprecedenti}
@@ -225,7 +225,7 @@ function UpdateUser(){
                         <input
                             type="text"
                             id="linguamadre"
-                            className='input'
+                            className='input h-100'
                             name="linguamadre"
                             required
                             placeholder=" "
@@ -238,7 +238,7 @@ function UpdateUser(){
                         <input
                             type="text"
                             id="altrelingue"
-                            className='input'
+                            className='input h-100'
                             name="altrelingue"
                             required
                             placeholder=" "
@@ -253,7 +253,7 @@ function UpdateUser(){
                             type="text"
                             id="indirizzosuperiore"
                             name="indirizzosuperiore"
-                            className='input'
+                            className='input h-100'
                             required
                             placeholder=" "
                             defaultValue={userData.indirizzosuperiore}
@@ -268,7 +268,7 @@ function UpdateUser(){
                             id="corsodilaurea"
                             name="corsodilaurea"
                             required
-                            className='input'
+                            className='input h-100'
                             placeholder=" "
                             defaultValue={userData.corsodilaurea}
                             onChange={handleChange}
@@ -281,7 +281,7 @@ function UpdateUser(){
                             type="text"
                             id="posizionelavorativaricercata"
                             name="posizionelavorativaricercata"
-                            className='input'
+                            className='input h-100'
                             required
                             placeholder=" "
                             defaultValue={userData.posizionelavorativaricercata}
@@ -295,7 +295,7 @@ function UpdateUser(){
                             type="text"
                             id="luogonascita"
                             name="luogonascita"
-                            className='input'
+                            className='input h-100'
                             required
                             placeholder=" "
                             defaultValue={userData.luogonascita}
@@ -309,7 +309,7 @@ function UpdateUser(){
                             type="text"
                             id="luogoresidenza"
                             name="luogoresidenza"
-                            className='input'
+                            className='input h-100'
                             required
                             placeholder=" "
                             defaultValue={userData.luogoresidenza}
@@ -323,7 +323,7 @@ function UpdateUser(){
                             type="text"
                             id="cellulare"
                             name="cellulare"
-                            className='input'
+                            className='input h-100'
                             required
                             placeholder=" "
                             defaultValue={userData.cellulare}
@@ -341,7 +341,7 @@ function UpdateUser(){
                             type="text"
                             id="descrizione"
                             name="descrizione"
-                            className='input'
+                            className='input h-100'
                             defaultValue={userData.descrizione}
                             required
                             placeholder=" "
@@ -355,7 +355,7 @@ function UpdateUser(){
                             type="text"
                             id="cienteladiriferimento"
                             name="cienteladiriferimento"
-                            className='input'
+                            className='input h-100'
                             onChange={handleChange}
                             defaultValue={userData.cienteladiriferimento}
                             required
@@ -368,7 +368,7 @@ function UpdateUser(){
                         <input
                             type="text"
                             id="numerodipendenti"
-                            className='input'
+                            className='input h-100'
                             name="numerodipendenti"
                             onChange={handleChange}
                             defaultValue={userData.numerodipendenti}
@@ -382,7 +382,7 @@ function UpdateUser(){
                         <input
                             type="text"
                             id="fatturatoannuale"
-                            className='input'
+                            className='input h-100'
                             name="fatturatoannuale"
                             onChange={handleChange}
                             defaultValue={userData.fatturatoannuale}
@@ -396,7 +396,7 @@ function UpdateUser(){
                         <input
                             type="text"
                             id="mercati"
-                            className='input'
+                            className='input h-100'
                             name="mercati"
                             onChange={handleChange}
                             required
@@ -410,7 +410,7 @@ function UpdateUser(){
                         <input
                             type="text"
                             id="settore"
-                            className='input'
+                            className='input h-100'
                             name="settore"
                             onChange={handleChange}
                             defaultValue={userData.settore}
@@ -423,7 +423,7 @@ function UpdateUser(){
                     <div className="input-container">
                         <input
                             type="text"
-                            className='input'
+                            className='input h-100'
                             id="fondatori"
                             name="fondatori"
                             defaultValue={userData.fondatori}
@@ -439,7 +439,7 @@ function UpdateUser(){
                             type="text"
                             defaultValue={userData.ceo}
                             id="ceo"
-                            className='input'
+                            className='input h-100'
                             name="ceo"
                             onChange={handleChange}
                             required
@@ -454,7 +454,7 @@ function UpdateUser(){
                             id="strutturasocietaria"
                             name="strutturasocietaria"
                             onChange={handleChange}
-                            className='input'
+                            className='input h-100'
                             required
                             defaultValue={userData.strutturasocietaria}
                             placeholder=" "
@@ -466,7 +466,7 @@ function UpdateUser(){
                         <input
                             type="text"
                             id="certificazioni"
-                            className='input'
+                            className='input h-100'
                             name="certificazioni"
                             defaultValue={userData.certificazioni}
                             onChange={handleChange}
@@ -481,7 +481,7 @@ function UpdateUser(){
                             type="text"
                             id="premi"
                             name="premi"
-                            className='input'
+                            className='input h-100'
                             onChange={handleChange}
                             defaultValue={userData.premi}
                             required
@@ -493,7 +493,7 @@ function UpdateUser(){
                     <div className="input-container">
                         <input
                             type="text"
-                            className='input'
+                            className='input h-100'
                             id="luogonascita"
                             name="luogonascita"
                             onChange={handleChange}
@@ -507,7 +507,7 @@ function UpdateUser(){
                     <div className="input-container">
                         <input
                             type="text"
-                            className='input'
+                            className='input h-100'
                             id="sedelegale"
                             name="sedelegale"
                             defaultValue={userData.sedelegale}
@@ -524,7 +524,7 @@ function UpdateUser(){
                             id="sedioperative"
                             name="sedioperative"
                             onChange={handleChange}
-                            className='input'
+                            className='input h-100'
                             defaultValue={userData.sedioperative}
                             required
                             placeholder=" "
@@ -537,7 +537,7 @@ function UpdateUser(){
                             type="text"
                             id="telefono"
                             name="telefono"
-                            className='input'
+                            className='input h-100'
                             onChange={handleChange}
                             required
                             defaultValue={userData.telefono}
@@ -551,7 +551,7 @@ function UpdateUser(){
                             type="text"
                             id="sitoweb"
                             name="sitoweb"
-                            className='input'
+                            className='input h-100'
                             defaultValue={userData.sitoweb}
                             onChange={handleChange}
                             required
@@ -566,7 +566,7 @@ function UpdateUser(){
                 <input
                     accept="image/*"
                     type="file"
-                    className='input'
+                    className='input h-100'
                     onChange={handleFileChange}
                 />
                 <label for="file" class="input-label">Carica immagine</label>
