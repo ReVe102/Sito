@@ -1,30 +1,27 @@
 import React, { useEffect, useState } from 'react';
 import io from 'socket.io-client';
-import { Link } from 'react-router-dom'; 
-import 'bootstrap-icons/font/bootstrap-icons.css'; 
+import { Link } from 'react-router-dom';
+import 'bootstrap-icons/font/bootstrap-icons.css';
+import './Notifications.css'; // Assicurati di importare il file CSS
 
 const socket = io('https://sito-be.onrender.com');
 
-const Notifications = () => {
-  const [notifications, setNotifications] = useState([]);
-
+const Notifications = ({ newNotificationsCount, resetNewNotificationsCount }) => {
   useEffect(() => {
-    socket.on('notification', (data) => {
-      setNotifications((prevNotifications) => [...prevNotifications, data.message]);
+    socket.on('notification', () => {
+      newNotificationsCount((prevCount) => prevCount + 1); // Incrementa il contatore
     });
 
     return () => {
       socket.off('notification');
     };
-  }, []);
+  }, [newNotificationsCount]);
 
   return (
     <div className="notifications">
-      <Link to="/notifications" className="btn btn-link">
+      <Link to="/notifications" className="btn btn-link" onClick={resetNewNotificationsCount}>
         <i className="bi bi-bell"></i>
-        {notifications.length > 0 && (
-          <span className="badge badge-danger">{notifications.length}</span>
-        )}
+        <span className="badge badge-danger">{newNotificationsCount}</span>
       </Link>
     </div>
   );
