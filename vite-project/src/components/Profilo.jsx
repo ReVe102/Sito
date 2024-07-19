@@ -116,7 +116,6 @@ const Profilo = () => {
   if (!userData) {
     return <div>Dati utente non disponibili.</div>;
   }
-  const whatsappLink = `https://wa.me/${userData.cellulare || userData.telefono}`;
 
   return (
     <div className="container">
@@ -258,15 +257,7 @@ const Profilo = () => {
             </div>
           </div>
         )}
-        <div className="qr-section"> 
-          <div className='notifichefissato'>
-            <h2>Contattami su Whatsapp </h2>
-            <hr/>
-          </div>
-          <div className='notifichescorrere'>
-            <QRCode value={whatsappLink} size={200} />
-          </div>
-        </div>
+        
       </div>
       <div className="mainbar">
         <Share />

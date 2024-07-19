@@ -83,10 +83,6 @@ body {
     height: calc(100% + 400px) !important;
 }
 
-.canvas.qr-code{
-    position: absolute;
-    left: 50px;
-}
 
 .leftbar {
     color: #333;
