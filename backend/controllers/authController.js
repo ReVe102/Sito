@@ -270,10 +270,10 @@ exports.likePost = async (req, res) => {
         const PostModel = postType === 'user' ? PostPrivati : PostAziende;   
         const post = await PostModel.findById(postId);
         if (!post.likes.includes(userId)) {
-            await post.updateOne({ $push: { likes: userId } }); //metto like
+            await post.updateOne({ $push: { likes: userId } }); 
             res.sendStatus(200);
         } else {
-            await post.updateOne({ $pull: { likes: userId } }); //tolgo like
+            await post.updateOne({ $pull: { likes: userId } }); 
             res.sendStatus(200);
         }
     } catch (err) {
