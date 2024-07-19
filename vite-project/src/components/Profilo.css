@@ -70,14 +70,17 @@ body {
 
 .footer {
     display: flex;
-    align-items: center;
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 12px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    margin: 20px 76px;
+    margin-left: -120px;
+    margin-top:20px;
+
+    align-items: center;
     border-radius: 8px;
-    width: 900px;
+    width: 1000px;
     height: calc(100% + 400px) !important;
+
 }
 
 
@@ -85,7 +88,6 @@ body {
     color: #333;
     width: 220px;
     padding: 10px;
-    margin-left: 0px;
 }
 
 .formsx {
