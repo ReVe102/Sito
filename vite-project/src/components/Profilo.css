@@ -79,7 +79,7 @@ body {
     align-items: center;
     border-radius: 8px;
     width: 1000px;
-    height: calc(100% + 400px) !important;
+    height: calc(100% + 100px) !important;
 
 }
 
@@ -128,7 +128,6 @@ body {
     line-height: 1.6; 
     color: #333; 
     background-color: transparent;
-    height: 260px;
     padding: 5px; 
     margin-top: -10px;
 }
