@@ -132,7 +132,7 @@ exports.profilo = async (req, res) => {
 
         if (userstatus === "privato") {
             PrivatoModel.findOne({ email: useremail })
-                .then((data) => {
+                .then((data) => {       //riceve il risultato della Promise come argomento (data).
                     if (!data) {
                         return res.status(404).send({ status: "error", data: "User not found" });
                     }
@@ -244,7 +244,7 @@ exports.uploadImmage=async(req,res)=>{
 
 exports.getImmage=async(req,res)=>{
     try{
-        await Images.find({}).then(data=>{
+        await Images.find({}).then(data=>{    //La variabile data contiene l'array di documenti trovati.
             res.send({status:"ok", data:data})
 
         })
@@ -255,7 +255,7 @@ exports.getImmage=async(req,res)=>{
 // Like/Dislike con token
 exports.likePost = async (req, res) => {
     try {
-        const token = req.header('Authorization').replace('Bearer ', '');
+        const token = req.header('Authorization').replace('Bearer ', '');  //otteniamo il valore dell'intestazione per verificare il token
         if (!token) {
             return res.status(401).json({ error: 'Access denied. No token provided.' });
         }
@@ -267,9 +267,9 @@ exports.likePost = async (req, res) => {
             return res.status(400).json({ error: 'Invalid token.' });
         }
         const { postId, postType } = req.body;
-        const PostModel = postType === 'user' ? PostPrivati : PostAziende;   
+        const PostModel = postType === 'user' ? PostPrivati : PostAziende;   //Determina quale modello Mongoose utilizzare in base al tipo di post
         const post = await PostModel.findById(postId);
-        if (!post.likes.includes(userId)) {
+        if (!post.likes.includes(userId)) {   //Verifica se l'array likes del post contiene l'ID dell'utente
             await post.updateOne({ $push: { likes: userId } }); 
             res.sendStatus(200);
         } else {
@@ -443,7 +443,7 @@ exports.getAziendaById = async (req, res) => {
 //get images per postare 
 exports.getImages = async (req, res) => {
     try {
-        const userImages = await PostPrivati.find({ img: { $exists: true } });
+        const userImages = await PostPrivati.find({ img: { $exists: true } });      //per verificare l'esistenza di un campo
         const aziendaImages = await PostAziende.find({ img: { $exists: true } });
         const allImages = userImages.concat(aziendaImages);
         res.status(200).json(allImages);
