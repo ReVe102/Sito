@@ -138,7 +138,6 @@ export default function Share() {
             });
     
             if (response.status === 200) {
-                //se status=200, resetta lo stato dell'immagine, del file e della descrizione e ricarica la pagina
                 setImage("");
                 setFile(null);
                 desc.current.value = "";
