@@ -9,7 +9,6 @@ export default function Share() {
     const desc = useRef();
     const [file, setFile] = useState(null);
     const [image, setImage] = useState("");
-    //allImage memorizza tutte le immagini caricate dal server
     const [allImage, setAllImage] = useState([]);
     const [userData, setUserData] = useState({});
     const [currentUser, setCurrentUser] = useState(null);
@@ -191,14 +190,11 @@ export default function Share() {
                     </button>
                 </form>
                 <br />
-                {/* 
                 {allImage.map(data => (
-                verifica se il post ha l'immagine (se ha il campo img)
                     data.img && data.img.includes(".postImg") ? (
-                    se le condizioni sono soddisfatte è creato img
                         <img key={data._id} width={100} height={100} src={data.img} alt={data.desc} />
                     ) : null
-                ))}*/}
+                ))}
             </div>
         </div>
     );
