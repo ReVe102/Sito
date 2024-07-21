@@ -286,19 +286,19 @@ exports.getAllAziendaPosts = async (req, res) => {
     try {
         const aziendaPosts = await PostAziende.aggregate([
             {
-                $sort: { createdAt: -1 }  
+                $sort: { createdAt: -1 }  //ordino i post per data di creazione
             },
             {
                 $group: {
-                    _id: "$aziendaId", 
-                    latestPost: { $first: "$$ROOT" }  
+                    _id: "$aziendaId", //crea un gruppo per ogni aziendaId
+                    latestPost: { $first: "$$ROOT" }  //prende il primo documento del gruppo (prendendo il primo prendi il più recente)
                 }
             },
             {
-                $replaceRoot: { newRoot: "$latestPost" }  
+                $replaceRoot: { newRoot: "$latestPost" }  //crea nuova root per sostituire il documento corrente
             },
             {
-                $sort: { createdAt: -1 } 
+                $sort: { createdAt: -1 } //per ogni gruppo di post di azienda, riordina per data di creazione
             }
         ]);
         res.status(200).json(aziendaPosts);
@@ -343,11 +343,11 @@ exports.getPostsByProfile = async (req, res) => {
         if (!user) {
             return res.status(401).json({ status: "error", data: "Invalid token" });
         }
-        const userId = user._id;
+        const userId = user._id; //estraggo id da token (id,email,status)
         console.log('id dell utente:', userId);
         let posts;
         if (user.status === 'privato') {
-            posts = await PostPrivati.find({ privatoId: userId});
+            posts = await PostPrivati.find({ privatoId: userId}); //metti in array posts i post corrispondenti a quell'id
         } else if (user.status === 'azienda') {
             posts = await PostAziende.find({ aziendaId: userId});
         }

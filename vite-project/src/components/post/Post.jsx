@@ -50,7 +50,7 @@ export default function Post({ post }) {
                 }
             });
     
-            setLike(isLiked ? like - 1 : like + 1);
+            setLike(isLiked ? like - 1 : like + 1); 
             setIsLiked(!isLiked);
         } catch (err) {
             console.error(err);

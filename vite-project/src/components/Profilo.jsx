@@ -32,6 +32,7 @@ const Profilo = () => {
         }  
       });
       if (response.status === 200) {
+        //se l'id del post è diverso, il post è mantenuto nell'array altrimenti è rimosso
         setUserPosts(userPosts.filter(post => post._id !== postId)); 
       }
     } catch (error) {
@@ -62,6 +63,8 @@ const Profilo = () => {
             }
           });
 
+          //a e b elementi dell'array che devono essere confrontati. calcola la differenza tra le due date. differenza positiva => b è più recente di a
+          // differenza negativa => a più recente di b. il confronto è fatto implicitamente da sort
           const sortedPosts = postsResponse.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
           setUserPosts(sortedPosts);  
         }

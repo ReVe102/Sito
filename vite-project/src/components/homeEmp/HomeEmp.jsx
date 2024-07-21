@@ -27,8 +27,8 @@ export default function HomeEmp(){
             <div className="feed">
                 <Sidebar />
                 <div className="feedWrapper">
-                    {posts.map((post) => (
-                        <Post key={post._id} post={post} />
+                    {posts.map((post) => ( //map per iterare su array posts
+                        <Post key={post._id} post={post} /> 
                     ))}
                 </div>
             </div>

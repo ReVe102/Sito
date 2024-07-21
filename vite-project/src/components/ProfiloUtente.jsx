@@ -46,6 +46,7 @@ const ProfiloUtente = () => {
         };
 
         fetchData();
+        //ripeti ogni volta 
     }, [privatoId, aziendaId]);
 
     const handleInterestedClick = () => {
